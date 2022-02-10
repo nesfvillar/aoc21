@@ -23,7 +23,7 @@ pub fn p1() {
         };
     }
 
-    println!("{}", position * depth);
+    println!("Day 2, part 1 result: {}", depth * position);
 }
 
 pub fn p2() {
@@ -55,5 +55,5 @@ pub fn p2() {
         };
     }
 
-    println!("{}", position * depth);
+    println!("Day 2, part 2 result: {}", depth * position);
 }
