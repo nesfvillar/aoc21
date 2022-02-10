@@ -34,5 +34,51 @@ pub fn p1() {
 }
 
 pub fn p2() {
+    let mut oxygen = BufReader::new(
+        File::open("data/day3.txt").unwrap())
+        .lines()
+        .filter_map(|d| usize::from_str_radix(&d.unwrap(), 2).ok())
+        .collect::<Vec<_>>();
+
+    let mut carbon = oxygen.clone();
+
+    for idx in (0..LENGTH).rev() {
+        let mut zeroes = 0;
+        let mut ones = 0;
+
+        if oxygen.len() > 1 {
+            for number in &oxygen {
+                let value = number & 1 << idx;
+                if value > 0 { ones += 1; }
+                else { zeroes += 1; }
+            }
+    
+            if ones >= zeroes {
+                oxygen.retain(|&number| number & 1 << idx > 0);
+            } else {
+                oxygen.retain(|&number| number & 1 << idx == 0);
+            }
+        }
+
+        let mut zeroes = 0;
+        let mut ones = 0;
+    
+        if carbon.len() > 1 {
+            for number in &carbon {
+                let value = number & 1 << idx;
+                if value > 0 { ones += 1; }
+                else { zeroes += 1; }
+            }
+    
+            if ones >= zeroes {
+                carbon.retain(|&number| number & 1 << idx == 0);
+            } else {
+                carbon.retain(|&number| number & 1 << idx > 0);
+            }
+        }
+    }
+
+    let result = oxygen[0] * carbon[0];
+    println!("Day3, part2 result: {}", result);
 }
 
