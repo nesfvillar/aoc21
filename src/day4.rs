@@ -88,7 +88,6 @@ pub fn p1() {
         .filter(|row| !row.is_empty())
         .map(|row| 
              row.split_whitespace()
-//             .map(str::to_owned)
              .map(|nums| nums.parse::<i32>().unwrap())
              .collect::<Vec<_>>());
 
@@ -108,7 +107,7 @@ pub fn p1() {
         for board in &boards {
             if board.inside(number) {
                 if board.is_complete(&drawn_numbers) {
-                    println!("Result is: {}", 
+                    println!("Day4, part1 solution is: {}", 
                              board.sum_everything(&drawn_numbers)
                              * number);
                     return
@@ -120,7 +119,49 @@ pub fn p1() {
 }
 
 pub fn p2() {
-    unimplemented!();
+    let mut data = BufReader::new(
+        File::open(INPUT).unwrap())
+        .lines()
+        .map(|line| line.unwrap());
+
+    let draws = data.next()
+        .map(|number|
+            number.split(',')
+            .map(str::to_owned)
+            .map(|n| n.parse::<i32>().unwrap())
+            .collect::<Vec<i32>>());
+
+    let rows = data
+        .filter(|row| !row.is_empty())
+        .map(|row| 
+             row.split_whitespace()
+             .map(|nums| nums.parse::<i32>().unwrap())
+             .collect::<Vec<_>>());
+
+    let mut boards = Vec::new();
+    let mut current = Vec::new();
+    for row in rows {
+        current.push(row);
+        if current.len() == 5 {
+            boards.push(Board::new(current));
+            current = Vec::new();
+        }
+    }
+    
+    let mut drawn_numbers: Vec<i32> = Vec::new();
+    for number in draws.unwrap() {
+        drawn_numbers.push(number);
+        if boards.len() > 1 {
+            boards.retain(|board| !board.is_complete(&drawn_numbers));
+        } else {
+            if boards[0].is_complete(&drawn_numbers) {
+                println!("Day4, part2 solution is: {}", 
+                         boards[0].sum_everything(&drawn_numbers) 
+                         * number);
+                return
+            }
+        }
+    }
 }
 
 #[cfg(test)]
