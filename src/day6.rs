@@ -11,7 +11,7 @@ pub fn p1() {
             a
         });
 
-    for day in 1..END_TIME {
+    for day in 0..END_TIME {
         fishes[(day + CYCLE_TIME) % BORN_AGE] += fishes[day % BORN_AGE];
     }
 
@@ -29,7 +29,7 @@ pub fn p2() {
             a
         });
 
-    for day in 1..END_TIME {
+    for day in 0..END_TIME {
         fishes[(day + CYCLE_TIME) % BORN_AGE] += fishes[day % BORN_AGE];
     }
 
