@@ -4,7 +4,7 @@ These are my solutions to the Advent of Code 2021 problem list using rust.
 
 [Link to the website](https://adventofcode.com/2021)
 
-## TODO:
+## TODO
 - [x] ~~Day 1 part 1~~
 - [x] ~~Day 1 part 2~~
 - [x] ~~Day 2 part 1~~
