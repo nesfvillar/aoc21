@@ -5,20 +5,20 @@ These are my solutions to the Advent of Code 2021 problem list using rust.
 [Link to the website](https://adventofcode.com/2021)
 
 ## TODO:
-- [x] Day 1 part 1
-- [x] Day 1 part 2
-- [x] Day 2 part 1
-- [x] Day 2 part 2
-- [x] Day 3 part 1
-- [x] Day 3 part 2
-- [x] Day 4 part 1
-- [x] Day 4 part 2
+- [x] ~~Day 1 part 1~~
+- [x] ~~Day 1 part 2~~
+- [x] ~~Day 2 part 1~~
+- [x] ~~Day 2 part 2~~
+- [x] ~~Day 3 part 1~~
+- [x] ~~Day 3 part 2~~
+- [x] ~~Day 4 part 1~~
+- [x] ~~Day 4 part 2~~
 - [ ] Day 5 part 1
 - [ ] Day 5 part 2
-- [x] Day 6 part 1
-- [x] Day 6 part 2
-- [x] Day 7 part 1
-- [x] Day 7 part 2
+- [x] ~~Day 6 part 1~~
+- [x] ~~Day 6 part 2~~
+- [x] ~~Day 7 part 1~~
+- [x] ~~Day 7 part 2~~
 - [ ] Day 8 part 1
 - [ ] Day 8 part 2
 - [ ] Day 9 part 1
